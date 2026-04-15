@@ -393,4 +393,85 @@
 </div>
 </main>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Sidebar Active States
+        const sidebarLinks = document.querySelectorAll('aside nav a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href') === '#') e.preventDefault();
+                sidebarLinks.forEach(l => {
+                    l.classList.remove('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm');
+                    l.classList.add('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
+                    const icon = l.querySelector('.material-symbols-outlined');
+                    if(icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                link.classList.remove('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
+                link.classList.add('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm');
+                const icon = link.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+
+        // Buttons
+        document.querySelectorAll('button').forEach(btn => {
+            const text = btn.textContent.trim();
+            if (text.includes('New Project')) {
+                btn.addEventListener('click', () => alert('Initiating new project creation sequence...'));
+            } else if (text === 'Export Report') {
+                btn.addEventListener('click', () => window.print());
+            } else if (text === 'Explore Region') {
+                btn.addEventListener('click', () => alert('Redirecting to sa-east-1 sustainable region dashboard...'));
+            } else {
+                const icon = btn.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    const iconText = icon.textContent.trim();
+                    if (iconText === 'notifications') {
+                        btn.addEventListener('click', () => alert('You have 3 new alerts regarding Cost Anomalies.'));
+                    } else if (iconText === 'filter_list') {
+                        btn.addEventListener('click', () => alert('Opening table advanced filters...'));
+                    }
+                }
+            }
+        });
+
+        // Language Select
+        const langSelect = document.querySelector('select');
+        if (langSelect) {
+            langSelect.addEventListener('change', (e) => alert(`Language preference updated to ${e.target.value}`));
+        }
+
+        // Miscellaneous Links
+        document.querySelectorAll('a').forEach(link => {
+            const text = link.textContent.trim();
+            if (text.includes('View Certificate')) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('Opening SOC2/GDPR compliance certificate details...');
+                });
+            } else if (text === 'Settings' || text === 'Help' || text === 'Docs' || text === 'Support') {
+                if(link.getAttribute('href') === '#') {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert(`Navigating to ${text} page...`);
+                    });
+                }
+            }
+        });
+
+        // Bar Chart Tooltips
+        const chartColumns = document.querySelectorAll('.flex-1.flex.items-end.justify-between > div');
+        const amounts = ['$2,400', '$3,150', '$2,800', '$4,980', '$3,600', '$1,200', '$1,850'];
+        chartColumns.forEach((col, index) => {
+            const bar = col.querySelector('div'); // the color bar itself
+            if (bar) {
+                bar.classList.add('relative', 'group', 'cursor-pointer', 'hover:brightness-110', 'transition-all');
+                const tooltip = document.createElement('div');
+                tooltip.className = 'absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-lg pointer-events-none';
+                tooltip.textContent = amounts[index] || '';
+                bar.appendChild(tooltip);
+            }
+        });
+    });
+</script>
 </body></html>

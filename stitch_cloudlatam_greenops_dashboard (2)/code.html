@@ -361,5 +361,84 @@
 </div>
 </div>
 </main>
-<!-- Floating Action Button Contextual Suppression: Not present on Detail View -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Sidebar Active States
+        const sidebarLinks = document.querySelectorAll('aside nav a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href') === '#') e.preventDefault();
+                sidebarLinks.forEach(l => {
+                    l.classList.remove('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm', 'rounded-xl');
+                    l.classList.add('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
+                    const icon = l.querySelector('.material-symbols-outlined');
+                    if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                link.classList.remove('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
+                link.classList.add('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm', 'rounded-xl');
+                const icon = link.querySelector('.material-symbols-outlined');
+                if (icon) icon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+
+        // Generic Buttons
+        document.querySelectorAll('button').forEach(btn => {
+            const text = btn.textContent.trim();
+            if (text.includes('New Project')) {
+                btn.addEventListener('click', () => alert('Initiating new project creation sequence...'));
+            } else if (text.includes('Manage Project')) {
+                btn.addEventListener('click', () => alert('Opening Sky-Alpha project settings...'));
+            } else if (text.includes('Generate PDF Report')) {
+                btn.addEventListener('click', () => window.print());
+            } else if (text === 'Monthly' || text === 'Quarterly') {
+                btn.addEventListener('click', (e) => {
+                    const siblings = e.target.parentElement.querySelectorAll('button');
+                    siblings.forEach(b => {
+                        b.className = 'px-3 py-1 text-xs font-bold text-outline hover:bg-surface-container-highest rounded-md transition-colors';
+                    });
+                    e.target.className = 'px-3 py-1 text-xs font-bold bg-white shadow-sm rounded-md text-primary transition-colors';
+                });
+            } else {
+                const icon = btn.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    const iconText = icon.textContent.trim();
+                    if (iconText === 'language') {
+                        btn.addEventListener('click', () => alert('Language preferences'));
+                    } else if (iconText === 'notifications') {
+                        btn.addEventListener('click', () => {
+                            const badge = btn.querySelector('.bg-error');
+                            if (badge) badge.remove(); 
+                            alert('You have 1 new critical alert.');
+                        });
+                    } else if (iconText === 'filter_list') {
+                        btn.addEventListener('click', () => alert('Opening label attribution filters...'));
+                    }
+                }
+            }
+        });
+
+        // Other Nav links
+        document.querySelectorAll('a').forEach(link => {
+            const text = link.textContent.trim();
+            if (['Docs', 'Support', 'Settings', 'Help'].includes(text)) {
+                if(link.getAttribute('href') === '#') {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        alert(`Navigating to ${text} page...`);
+                    });
+                }
+            }
+        });
+        
+        // Search
+        const searchInput = document.querySelector('input[placeholder*="Search"]');
+        if(searchInput) {
+            searchInput.addEventListener('keydown', (e) => {
+                if(e.key === 'Enter') {
+                    alert('Searching for: ' + e.target.value);
+                }
+            });
+        }
+    });
+</script>
 </body></html>

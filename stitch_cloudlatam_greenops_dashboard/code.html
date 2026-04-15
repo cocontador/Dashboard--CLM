@@ -296,14 +296,26 @@
 </div>
 <div class="mt-auto relative w-full h-48 bg-surface-container-lowest rounded-xl flex items-end p-4 gap-2 border border-outline-variant/10">
 <div class="flex-1 bg-primary/10 h-[40%] rounded-t-lg relative group">
-<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Mon</div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-md">Mon</div>
 </div>
-<div class="flex-1 bg-primary/20 h-[55%] rounded-t-lg"></div>
-<div class="flex-1 bg-primary/30 h-[45%] rounded-t-lg"></div>
-<div class="flex-1 bg-primary/40 h-[60%] rounded-t-lg"></div>
-<div class="flex-1 bg-primary/60 h-[75%] rounded-t-lg"></div>
-<div class="flex-1 bg-error/80 h-[95%] rounded-t-lg"></div>
-<div class="flex-1 bg-error h-[100%] rounded-t-lg animate-pulse"></div>
+<div class="flex-1 bg-primary/20 h-[55%] rounded-t-lg relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-md">Tue</div>
+</div>
+<div class="flex-1 bg-primary/30 h-[45%] rounded-t-lg relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-md">Wed</div>
+</div>
+<div class="flex-1 bg-primary/40 h-[60%] rounded-t-lg relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-md">Thu</div>
+</div>
+<div class="flex-1 bg-primary/60 h-[75%] rounded-t-lg relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-md">Fri</div>
+</div>
+<div class="flex-1 bg-error/80 h-[95%] rounded-t-lg relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-md">Sat</div>
+</div>
+<div class="flex-1 bg-error h-[100%] rounded-t-lg animate-pulse relative group">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 shadow-md">Sun</div>
+</div>
 </div>
 <div class="absolute bottom-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mb-32 -mr-32 blur-3xl"></div>
 </div>
@@ -335,4 +347,105 @@
 </div>
 </div>
 </main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Search Functionality
+        const searchInput = document.querySelector('input[placeholder="Search resources..."]');
+        const alertList = document.querySelector('.space-y-6'); 
+        const alertRows = alertList ? alertList.querySelectorAll('.group.relative') : [];
+        if(searchInput && alertRows.length > 0) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                alertRows.forEach(row => {
+                    const title = row.querySelector('h3')?.textContent.toLowerCase() || '';
+                    const desc = row.querySelector('p')?.textContent.toLowerCase() || '';
+                    if(title.includes(term) || desc.includes(term)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        }
+
+        // Action Buttons
+        document.querySelectorAll('button').forEach(btn => {
+            const text = btn.textContent.trim();
+            if (text === 'Mark as Reviewed') {
+                btn.addEventListener('click', (e) => {
+                    const row = e.target.closest('.group.relative');
+                    if (row) {
+                        row.style.opacity = '0';
+                        row.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            row.remove();
+                            // Update counts
+                            const activeCount = document.querySelector('.text-4xl.font-headline.font-black.text-error');
+                            if (activeCount) {
+                                let current = parseInt(activeCount.textContent, 10);
+                                if (!isNaN(current) && current > 0) {
+                                    activeCount.textContent = current - 1;
+                                    // Make it pulse to show it updated
+                                    activeCount.classList.add('opacity-50');
+                                    setTimeout(() => activeCount.classList.remove('opacity-50'), 200);
+                                }
+                            }
+                        }, 300);
+                    }
+                });
+            } else if (text === 'Escalate to Finance') {
+                btn.addEventListener('click', (e) => {
+                    const b = e.currentTarget;
+                    b.innerHTML = '<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">check_circle</span>Escalated</span>';
+                    b.classList.add('opacity-75', 'cursor-not-allowed', 'pointer-events-none');
+                });
+            } else if (text === 'Enable Mitigation') {
+                btn.addEventListener('click', (e) => {
+                    const b = e.currentTarget;
+                    b.innerHTML = '<span class="flex items-center justify-center gap-1"><span class="material-symbols-outlined text-[16px]">check</span> Mitigation Enabled</span>';
+                    b.classList.replace('bg-secondary-container', 'bg-secondary');
+                    b.classList.replace('text-on-secondary-container', 'text-on-secondary');
+                    b.classList.add('cursor-not-allowed', 'pointer-events-none');
+                });
+            } else if (text === 'Export Report') {
+                btn.addEventListener('click', () => window.print());
+            } else if (text === 'Engine Settings') {
+                btn.addEventListener('click', () => alert('Loading Antigravity Engine settings...'));
+            } else if (text === 'New Project') {
+                btn.addEventListener('click', () => alert('Initiating new project creation sequence...'));
+            }
+        });
+
+        // Sidebar Active States
+        const sidebarLinks = document.querySelectorAll('aside a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href') === '#') e.preventDefault();
+                sidebarLinks.forEach(l => {
+                    l.classList.remove('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm');
+                    l.classList.add('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
+                    const icon = l.querySelector('.material-symbols-outlined');
+                    if(icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                link.classList.remove('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
+                link.classList.add('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm');
+                const icon = link.querySelector('.material-symbols-outlined');
+                if(icon) icon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+
+        // Top Nav Icons Dropdowns/Alerts
+        const navBtns = document.querySelectorAll('nav button');
+        navBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const icon = btn.querySelector('.material-symbols-outlined');
+                if(icon && icon.textContent.trim() === 'language') {
+                    alert('Language preferences setting');
+                } else if(icon && icon.textContent.trim() === 'notifications') {
+                    alert('You have 3 unread critical anomalies.');
+                }
+            });
+        });
+    });
+</script>
 </body></html>
