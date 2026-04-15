@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Project Detail - CloudLatam</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Project Detail - CloudLatam</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -79,366 +87,419 @@
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        body { font-family: 'Inter', sans-serif; }
-        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
     </style>
 </head>
+
 <body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
-<!-- SideNavBar -->
-<aside class="h-screen w-64 fixed left-0 top-0 bg-[#f7f9ff] dark:bg-slate-950 flex flex-col py-6 px-4 gap-2 border-r border-slate-100 dark:border-slate-800 z-50">
-<div class="flex items-center gap-3 px-2 mb-8">
-<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm overflow-hidden">
-<img alt="CloudLatam Logo" data-alt="Abstract minimalist geometric logo for a tech cloud company using blue and white professional tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXOX_WZrRiCFD9wa_8Kezu5wOegcfxffpNy0Vi-3M6rUEoU63kKhafkltGBt43E1G2IVcMiK1jlzTUfw29480Go1F5iz6MolTtOoejwRjqbiOCZlznOvw8i8AV7F3hsiDtFH2l6ScJp9-L_sgw-ywDs5sJhthoE5FFU7lqc4DJ95CgQ7BPY6Tf7qgrx7c0xCMswoi8jmFiYEMuT1q-MHZy-1alExEgC7TWuXbF1S9kppZB0lYGH1uyScrx6k_8jYhsDK9VlZEBbwU"/>
-</div>
-<div>
-<h1 class="text-lg font-black text-[#181c20] dark:text-slate-100 leading-tight">CloudLatam</h1>
-<p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Precision Atmosphere</p>
-</div>
-</div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#1A73E8] hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all active:translate-x-1 duration-150 font-semibold text-sm" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<span>Overview</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#1A73E8] hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all active:translate-x-1 duration-150 font-semibold text-sm" href="#">
-<span class="material-symbols-outlined">warning</span>
-<span>Alerts</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-900 text-[#1A73E8] rounded-xl shadow-sm transition-all active:translate-x-1 duration-150 font-semibold text-sm" href="#">
-<span class="material-symbols-outlined">folder</span>
-<span>Projects</span>
-</a>
-</nav>
-<div class="mt-auto pt-6 space-y-1">
-<button class="w-full mb-4 bg-primary text-on-primary py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-sm hover:opacity-90 transition-opacity">
-<span class="material-symbols-outlined">add</span>
+    <!-- SideNavBar -->
+    <aside
+        class="h-screen w-64 fixed left-0 top-0 bg-[#f7f9ff] dark:bg-slate-950 flex flex-col py-6 px-4 gap-2 border-r border-slate-100 dark:border-slate-800 z-50">
+        <div class="flex items-center gap-3 px-2 mb-8">
+            <div
+                class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm overflow-hidden">
+                <img alt="CloudLatam Logo"
+                    data-alt="Abstract minimalist geometric logo for a tech cloud company using blue and white professional tones"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXOX_WZrRiCFD9wa_8Kezu5wOegcfxffpNy0Vi-3M6rUEoU63kKhafkltGBt43E1G2IVcMiK1jlzTUfw29480Go1F5iz6MolTtOoejwRjqbiOCZlznOvw8i8AV7F3hsiDtFH2l6ScJp9-L_sgw-ywDs5sJhthoE5FFU7lqc4DJ95CgQ7BPY6Tf7qgrx7c0xCMswoi8jmFiYEMuT1q-MHZy-1alExEgC7TWuXbF1S9kppZB0lYGH1uyScrx6k_8jYhsDK9VlZEBbwU" />
+            </div>
+            <div>
+                <h1 class="text-lg font-black text-[#181c20] dark:text-slate-100 leading-tight">CloudLatam</h1>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Precision Atmosphere</p>
+            </div>
+        </div>
+        <nav class="flex-1 space-y-1">
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#1A73E8] hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all active:translate-x-1 duration-150 font-semibold text-sm"
+                href="#">
+                <span class="material-symbols-outlined">dashboard</span>
+                <span>Overview</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#1A73E8] hover:bg-white/50 dark:hover:bg-slate-800/50 transition-all active:translate-x-1 duration-150 font-semibold text-sm"
+                href="#">
+                <span class="material-symbols-outlined">warning</span>
+                <span>Alerts</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-900 text-[#1A73E8] rounded-xl shadow-sm transition-all active:translate-x-1 duration-150 font-semibold text-sm"
+                href="#">
+                <span class="material-symbols-outlined">folder</span>
+                <span>Projects</span>
+            </a>
+        </nav>
+        <div class="mt-auto pt-6 space-y-1">
+            <button
+                class="w-full mb-4 bg-primary text-on-primary py-3 rounded-xl font-bold flex items-center justify-center gap-2 shadow-sm hover:opacity-90 transition-opacity">
+                <span class="material-symbols-outlined">add</span>
                 New Project
             </button>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#1A73E8] hover:bg-white/50 transition-all font-semibold text-sm" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span>Settings</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#1A73E8] hover:bg-white/50 transition-all font-semibold text-sm" href="#">
-<span class="material-symbols-outlined">help_outline</span>
-<span>Help</span>
-</a>
-</div>
-</aside>
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full z-40 bg-[#f7f9ff] dark:bg-slate-950 flex justify-between items-center h-16 px-6 pl-72">
-<div class="flex items-center flex-1 max-w-xl">
-<div class="relative w-full group">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all" placeholder="Search resources or documents..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6 ml-8">
-<div class="hidden lg:flex items-center gap-6">
-<a class="text-slate-500 dark:text-slate-400 font-medium font-['Plus_Jakarta_Sans'] tracking-tight hover:bg-blue-50 dark:hover:bg-blue-900/20 px-3 py-1 rounded transition-colors" href="#">Docs</a>
-<a class="text-slate-500 dark:text-slate-400 font-medium font-['Plus_Jakarta_Sans'] tracking-tight hover:bg-blue-50 dark:hover:bg-blue-900/20 px-3 py-1 rounded transition-colors" href="#">Support</a>
-</div>
-<div class="flex items-center gap-2">
-<button class="p-2 text-outline hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full transition-colors active:scale-95 duration-200">
-<span class="material-symbols-outlined">language</span>
-</button>
-<button class="p-2 text-outline hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full transition-colors active:scale-95 duration-200 relative">
-<span class="material-symbols-outlined">notifications</span>
-<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
-</button>
-</div>
-<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30">
-<img alt="User Profile" data-alt="Close up of a professional male software architect with a friendly expression in a modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkYdzopRt9fKOWTHpkn0_AlnVaTOk4UpGewldkDoKIRYrw86CCtCbXnoq_5QoGIQBnLrqIku8TKhSZhXfJem5TYnADZV54t6rTA9E_JdM3fFbUVS-YvL-Nc_SZuoLzHSWFjpAabl7hvLlV_y7z4-gRqCSjvIxWISsuMOtU6eG8-fzckYQfY4nRUzMzD8o6eEq2cc_rlSW_m12unUruS5yKwr9Oo97mmkIlsRF2UuxCDIRI-VL0y7lfQkEk2cnC1ttFGHm-8-BHs5M"/>
-</div>
-</div>
-</header>
-<!-- Main Content -->
-<main class="pl-64 pt-16 min-h-screen">
-<div class="p-8 max-w-[1400px] mx-auto">
-<!-- Page Header -->
-<div class="flex justify-between items-end mb-10">
-<div>
-<nav class="flex items-center gap-2 text-xs font-bold text-outline-variant mb-2 uppercase tracking-widest">
-<span>Projects</span>
-<span class="material-symbols-outlined text-[12px]">chevron_right</span>
-<span class="text-primary">Project Sky-Alpha</span>
-</nav>
-<h2 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface">Project Sky-Alpha</h2>
-<p class="text-on-surface-variant mt-1">High-performance data modeling for atmospheric research pipelines.</p>
-</div>
-<div class="flex gap-3">
-<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-high text-on-surface font-bold rounded-xl hover:bg-surface-container-highest transition-colors active:scale-95">
-<span class="material-symbols-outlined">edit</span>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#1A73E8] hover:bg-white/50 transition-all font-semibold text-sm"
+                href="#">
+                <span class="material-symbols-outlined">settings</span>
+                <span>Settings</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-[#1A73E8] hover:bg-white/50 transition-all font-semibold text-sm"
+                href="#">
+                <span class="material-symbols-outlined">help_outline</span>
+                <span>Help</span>
+            </a>
+        </div>
+    </aside>
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-40 bg-[#f7f9ff] dark:bg-slate-950 flex justify-between items-center h-16 px-6 pl-72">
+        <div class="flex items-center flex-1 max-w-xl">
+            <div class="relative w-full group">
+                <span
+                    class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+                <input
+                    class="w-full bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/40 focus:bg-surface-container-lowest transition-all"
+                    placeholder="Search resources or documents..." type="text" />
+            </div>
+        </div>
+        <div class="flex items-center gap-6 ml-8">
+            <div class="hidden lg:flex items-center gap-6">
+                <a class="text-slate-500 dark:text-slate-400 font-medium font-['Plus_Jakarta_Sans'] tracking-tight hover:bg-blue-50 dark:hover:bg-blue-900/20 px-3 py-1 rounded transition-colors"
+                    href="#">Docs</a>
+                <a class="text-slate-500 dark:text-slate-400 font-medium font-['Plus_Jakarta_Sans'] tracking-tight hover:bg-blue-50 dark:hover:bg-blue-900/20 px-3 py-1 rounded transition-colors"
+                    href="#">Support</a>
+            </div>
+            <div class="flex items-center gap-2">
+                <button
+                    class="p-2 text-outline hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full transition-colors active:scale-95 duration-200">
+                    <span class="material-symbols-outlined">language</span>
+                </button>
+                <button
+                    class="p-2 text-outline hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-full transition-colors active:scale-95 duration-200 relative">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+                </button>
+            </div>
+            <div
+                class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/30">
+                <img alt="User Profile"
+                    data-alt="Close up of a professional male software architect with a friendly expression in a modern office environment"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkYdzopRt9fKOWTHpkn0_AlnVaTOk4UpGewldkDoKIRYrw86CCtCbXnoq_5QoGIQBnLrqIku8TKhSZhXfJem5TYnADZV54t6rTA9E_JdM3fFbUVS-YvL-Nc_SZuoLzHSWFjpAabl7hvLlV_y7z4-gRqCSjvIxWISsuMOtU6eG8-fzckYQfY4nRUzMzD8o6eEq2cc_rlSW_m12unUruS5yKwr9Oo97mmkIlsRF2UuxCDIRI-VL0y7lfQkEk2cnC1ttFGHm-8-BHs5M" />
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="pl-64 pt-16 min-h-screen">
+        <div class="p-8 max-w-[1400px] mx-auto">
+            <!-- Page Header -->
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <nav
+                        class="flex items-center gap-2 text-xs font-bold text-outline-variant mb-2 uppercase tracking-widest">
+                        <span>Projects</span>
+                        <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+                        <span class="text-primary">Project Sky-Alpha</span>
+                    </nav>
+                    <h2 class="text-4xl font-headline font-extrabold tracking-tight text-on-surface">Project Sky-Alpha
+                    </h2>
+                    <p class="text-on-surface-variant mt-1">High-performance data modeling for atmospheric research
+                        pipelines.</p>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="flex items-center gap-2 px-6 py-3 bg-surface-container-high text-on-surface font-bold rounded-xl hover:bg-surface-container-highest transition-colors active:scale-95">
+                        <span class="material-symbols-outlined">edit</span>
                         Manage Project
                     </button>
-<button class="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95">
-<img alt="Google Workspace" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-ZIMCsgeE9yv0Ce8RMAscmBGC8wUrcXmANd6Z1T37-C_tegEuWeIx1laGuuygJLVfYfOsTh2DHYryP9fHG7R5OmH3D8lIxO-vKnV7NpkLy6Dnlw-FNau40xJ2c5VlqQGZNGLfHpHcxBOCYK0uMsCsSjkZMabeifamYJzUcjGO8KzfqfOErDO4rca0kZmvXmryP2cL_2L6lDZBz4s5uVvpaUBH0UhUQK5dZ3XLmAbz0b5x44OJzGMkUSrRBodpyYGCwg0c4_FmRTs"/>
+                    <button
+                        class="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-xl shadow-lg hover:shadow-xl transition-all active:scale-95">
+                        <img alt="Google Workspace" class="w-5 h-5"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-ZIMCsgeE9yv0Ce8RMAscmBGC8wUrcXmANd6Z1T37-C_tegEuWeIx1laGuuygJLVfYfOsTh2DHYryP9fHG7R5OmH3D8lIxO-vKnV7NpkLy6Dnlw-FNau40xJ2c5VlqQGZNGLfHpHcxBOCYK0uMsCsSjkZMabeifamYJzUcjGO8KzfqfOErDO4rca0kZmvXmryP2cL_2L6lDZBz4s5uVvpaUBH0UhUQK5dZ3XLmAbz0b5x44OJzGMkUSrRBodpyYGCwg0c4_FmRTs" />
                         Generate PDF Report
                     </button>
-</div>
-</div>
-<!-- Bento Grid -->
-<div class="grid grid-cols-12 gap-6">
-<!-- Detailed Cost Breakdown -->
-<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm relative overflow-hidden">
-<div class="flex justify-between items-start mb-8">
-<div>
-<h3 class="text-xl font-headline font-bold mb-1">Cost Breakdown</h3>
-<p class="text-sm text-on-surface-variant">Expense distribution by business unit</p>
-</div>
-<div class="flex items-center gap-2 bg-surface-container-low p-1 rounded-lg">
-<button class="px-3 py-1 text-xs font-bold bg-white shadow-sm rounded-md text-primary">Monthly</button>
-<button class="px-3 py-1 text-xs font-bold text-outline">Quarterly</button>
-</div>
-</div>
-<div class="space-y-6">
-<!-- Unit 1 -->
-<div class="group">
-<div class="flex justify-between items-center mb-2">
-<span class="text-sm font-semibold text-on-surface">Data Science &amp; R&amp;D</span>
-<span class="text-sm font-bold text-primary">$42,850.20</span>
-</div>
-<div class="w-full h-3 bg-surface-container-low rounded-full overflow-hidden">
-<div class="h-full bg-primary rounded-full transition-all group-hover:opacity-80" style="width: 65%;"></div>
-</div>
-</div>
-<!-- Unit 2 -->
-<div class="group">
-<div class="flex justify-between items-center mb-2">
-<span class="text-sm font-semibold text-on-surface">Platform Infrastructure</span>
-<span class="text-sm font-bold text-primary">$18,400.00</span>
-</div>
-<div class="w-full h-3 bg-surface-container-low rounded-full overflow-hidden">
-<div class="h-full bg-primary-container rounded-full transition-all group-hover:opacity-80" style="width: 28%;"></div>
-</div>
-</div>
-<!-- Unit 3 -->
-<div class="group">
-<div class="flex justify-between items-center mb-2">
-<span class="text-sm font-semibold text-on-surface">External API Egress</span>
-<span class="text-sm font-bold text-primary">$4,210.55</span>
-</div>
-<div class="w-full h-3 bg-surface-container-low rounded-full overflow-hidden">
-<div class="h-full bg-primary-fixed-dim rounded-full transition-all group-hover:opacity-80" style="width: 7%;"></div>
-</div>
-</div>
-</div>
-<!-- Subtle Chart Decoration -->
-<div class="mt-12 pt-8 border-t border-outline-variant/10">
-<div class="flex items-end justify-between h-32 gap-2">
-<div class="flex-1 bg-surface-container-low rounded-t-lg h-[40%]"></div>
-<div class="flex-1 bg-surface-container-low rounded-t-lg h-[60%]"></div>
-<div class="flex-1 bg-surface-container-low rounded-t-lg h-[45%]"></div>
-<div class="flex-1 bg-primary rounded-t-lg h-[85%]"></div>
-<div class="flex-1 bg-surface-container-low rounded-t-lg h-[30%]"></div>
-<div class="flex-1 bg-surface-container-low rounded-t-lg h-[50%]"></div>
-<div class="flex-1 bg-surface-container-low rounded-t-lg h-[55%]"></div>
-<div class="flex-1 bg-primary-container rounded-t-lg h-[75%]"></div>
-</div>
-</div>
-</div>
-<!-- Sustainability Metrics -->
-<div class="col-span-12 lg:col-span-4 bg-secondary-container text-on-secondary-container rounded-[2rem] p-8 shadow-sm flex flex-col">
-<div class="flex justify-between items-start mb-6">
-<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">eco</span>
-<span class="text-xs font-black uppercase tracking-tighter bg-on-secondary-container/10 px-2 py-1 rounded">Project Carbon Grade: A+</span>
-</div>
-<h3 class="text-2xl font-headline font-extrabold mb-2">Sustainability Performance</h3>
-<p class="text-on-secondary-container/80 text-sm mb-8 leading-relaxed">Optimization efforts have reduced carbon footprint by 14% this quarter through serverless refactoring.</p>
-<div class="mt-auto space-y-4">
-<div class="bg-white/20 backdrop-blur-md p-4 rounded-2xl flex items-center justify-between">
-<span class="text-sm font-bold">CO2 Offset</span>
-<span class="text-xl font-headline font-black">2.4 Tons</span>
-</div>
-<div class="bg-white/20 backdrop-blur-md p-4 rounded-2xl flex items-center justify-between">
-<span class="text-sm font-bold">Energy Efficiency</span>
-<span class="text-xl font-headline font-black">94%</span>
-</div>
-</div>
-</div>
-<!-- Cost Analysis by Labels -->
-<div class="col-span-12 bg-surface-container-low rounded-[2rem] p-8">
-<div class="flex items-center justify-between mb-8">
-<div>
-<h3 class="text-xl font-headline font-bold">Label-Based Attribution</h3>
-<p class="text-sm text-on-surface-variant">Cost granularities across organizational labels</p>
-</div>
-<button class="p-2 bg-surface-container-lowest rounded-lg text-outline">
-<span class="material-symbols-outlined">filter_list</span>
-</button>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Label Card -->
-<div class="bg-surface-container-lowest p-6 rounded-2xl border-l-4 border-primary">
-<p class="text-xs font-bold text-outline-variant uppercase mb-1">env:prod</p>
-<h4 class="text-2xl font-headline font-black mb-4">$52,110.00</h4>
-<div class="flex items-center gap-1 text-xs text-error font-bold">
-<span class="material-symbols-outlined text-sm">trending_up</span>
+                </div>
+            </div>
+            <!-- Bento Grid -->
+            <div class="grid grid-cols-12 gap-6">
+                <!-- Detailed Cost Breakdown -->
+                <div
+                    class="col-span-12 lg:col-span-8 bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <h3 class="text-xl font-headline font-bold mb-1">Cost Breakdown</h3>
+                            <p class="text-sm text-on-surface-variant">Expense distribution by business unit</p>
+                        </div>
+                        <div class="flex items-center gap-2 bg-surface-container-low p-1 rounded-lg">
+                            <button
+                                class="px-3 py-1 text-xs font-bold bg-white shadow-sm rounded-md text-primary">Monthly</button>
+                            <button class="px-3 py-1 text-xs font-bold text-outline">Quarterly</button>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <!-- Unit 1 -->
+                        <div class="group">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-on-surface">Data Science &amp; R&amp;D</span>
+                                <span class="text-sm font-bold text-primary">$42,850.20</span>
+                            </div>
+                            <div class="w-full h-3 bg-surface-container-low rounded-full overflow-hidden">
+                                <div class="h-full bg-primary rounded-full transition-all group-hover:opacity-80"
+                                    style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <!-- Unit 2 -->
+                        <div class="group">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-on-surface">Platform Infrastructure</span>
+                                <span class="text-sm font-bold text-primary">$18,400.00</span>
+                            </div>
+                            <div class="w-full h-3 bg-surface-container-low rounded-full overflow-hidden">
+                                <div class="h-full bg-primary-container rounded-full transition-all group-hover:opacity-80"
+                                    style="width: 28%;"></div>
+                            </div>
+                        </div>
+                        <!-- Unit 3 -->
+                        <div class="group">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-semibold text-on-surface">External API Egress</span>
+                                <span class="text-sm font-bold text-primary">$4,210.55</span>
+                            </div>
+                            <div class="w-full h-3 bg-surface-container-low rounded-full overflow-hidden">
+                                <div class="h-full bg-primary-fixed-dim rounded-full transition-all group-hover:opacity-80"
+                                    style="width: 7%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Subtle Chart Decoration -->
+                    <div class="mt-12 pt-8 border-t border-outline-variant/10">
+                        <div class="flex items-end justify-between h-32 gap-2">
+                            <div class="flex-1 bg-surface-container-low rounded-t-lg h-[40%]"></div>
+                            <div class="flex-1 bg-surface-container-low rounded-t-lg h-[60%]"></div>
+                            <div class="flex-1 bg-surface-container-low rounded-t-lg h-[45%]"></div>
+                            <div class="flex-1 bg-primary rounded-t-lg h-[85%]"></div>
+                            <div class="flex-1 bg-surface-container-low rounded-t-lg h-[30%]"></div>
+                            <div class="flex-1 bg-surface-container-low rounded-t-lg h-[50%]"></div>
+                            <div class="flex-1 bg-surface-container-low rounded-t-lg h-[55%]"></div>
+                            <div class="flex-1 bg-primary-container rounded-t-lg h-[75%]"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sustainability Metrics -->
+                <div
+                    class="col-span-12 lg:col-span-4 bg-secondary-container text-on-secondary-container rounded-[2rem] p-8 shadow-sm flex flex-col">
+                    <div class="flex justify-between items-start mb-6">
+                        <span class="material-symbols-outlined text-4xl"
+                            style="font-variation-settings: 'FILL' 1;">eco</span>
+                        <span
+                            class="text-xs font-black uppercase tracking-tighter bg-on-secondary-container/10 px-2 py-1 rounded">Project
+                            Carbon Grade: A+</span>
+                    </div>
+                    <h3 class="text-2xl font-headline font-extrabold mb-2">Sustainability Performance</h3>
+                    <p class="text-on-secondary-container/80 text-sm mb-8 leading-relaxed">Optimization efforts have
+                        reduced carbon footprint by 14% this quarter through serverless refactoring.</p>
+                    <div class="mt-auto space-y-4">
+                        <div class="bg-white/20 backdrop-blur-md p-4 rounded-2xl flex items-center justify-between">
+                            <span class="text-sm font-bold">CO2 Offset</span>
+                            <span class="text-xl font-headline font-black">2.4 Tons</span>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-md p-4 rounded-2xl flex items-center justify-between">
+                            <span class="text-sm font-bold">Energy Efficiency</span>
+                            <span class="text-xl font-headline font-black">94%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cost Analysis by Labels -->
+                <div class="col-span-12 bg-surface-container-low rounded-[2rem] p-8">
+                    <div class="flex items-center justify-between mb-8">
+                        <div>
+                            <h3 class="text-xl font-headline font-bold">Label-Based Attribution</h3>
+                            <p class="text-sm text-on-surface-variant">Cost granularities across organizational labels
+                            </p>
+                        </div>
+                        <button class="p-2 bg-surface-container-lowest rounded-lg text-outline">
+                            <span class="material-symbols-outlined">filter_list</span>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Label Card -->
+                        <div class="bg-surface-container-lowest p-6 rounded-2xl border-l-4 border-primary">
+                            <p class="text-xs font-bold text-outline-variant uppercase mb-1">env:prod</p>
+                            <h4 class="text-2xl font-headline font-black mb-4">$52,110.00</h4>
+                            <div class="flex items-center gap-1 text-xs text-error font-bold">
+                                <span class="material-symbols-outlined text-sm">trending_up</span>
                                 4.2% vs last month
                             </div>
-</div>
-<!-- Label Card -->
-<div class="bg-surface-container-lowest p-6 rounded-2xl border-l-4 border-primary-container">
-<p class="text-xs font-bold text-outline-variant uppercase mb-1">team:analytics</p>
-<h4 class="text-2xl font-headline font-black mb-4">$12,440.50</h4>
-<div class="flex items-center gap-1 text-xs text-secondary font-bold">
-<span class="material-symbols-outlined text-sm">trending_down</span>
+                        </div>
+                        <!-- Label Card -->
+                        <div class="bg-surface-container-lowest p-6 rounded-2xl border-l-4 border-primary-container">
+                            <p class="text-xs font-bold text-outline-variant uppercase mb-1">team:analytics</p>
+                            <h4 class="text-2xl font-headline font-black mb-4">$12,440.50</h4>
+                            <div class="flex items-center gap-1 text-xs text-secondary font-bold">
+                                <span class="material-symbols-outlined text-sm">trending_down</span>
                                 12.1% efficiency gain
                             </div>
-</div>
-<!-- Label Card -->
-<div class="bg-surface-container-lowest p-6 rounded-2xl border-l-4 border-secondary">
-<p class="text-xs font-bold text-outline-variant uppercase mb-1">region:latam-1</p>
-<h4 class="text-2xl font-headline font-black mb-4">$3,900.25</h4>
-<div class="flex items-center gap-1 text-xs text-secondary font-bold">
-<span class="material-symbols-outlined text-sm">video_stable</span>
+                        </div>
+                        <!-- Label Card -->
+                        <div class="bg-surface-container-lowest p-6 rounded-2xl border-l-4 border-secondary">
+                            <p class="text-xs font-bold text-outline-variant uppercase mb-1">region:latam-1</p>
+                            <h4 class="text-2xl font-headline font-black mb-4">$3,900.25</h4>
+                            <div class="flex items-center gap-1 text-xs text-secondary font-bold">
+                                <span class="material-symbols-outlined text-sm">video_stable</span>
                                 Baseline stable
                             </div>
-</div>
-<!-- Label Card -->
-<div class="bg-surface-container-lowest p-6 rounded-2xl border-l-4 border-tertiary">
-<p class="text-xs font-bold text-outline-variant uppercase mb-1">compliance:hipaa</p>
-<h4 class="text-2xl font-headline font-black mb-4">$1,850.10</h4>
-<div class="flex items-center gap-1 text-xs text-outline font-bold">
-<span class="material-symbols-outlined text-sm">history</span>
+                        </div>
+                        <!-- Label Card -->
+                        <div class="bg-surface-container-lowest p-6 rounded-2xl border-l-4 border-tertiary">
+                            <p class="text-xs font-bold text-outline-variant uppercase mb-1">compliance:hipaa</p>
+                            <h4 class="text-2xl font-headline font-black mb-4">$1,850.10</h4>
+                            <div class="flex items-center gap-1 text-xs text-outline font-bold">
+                                <span class="material-symbols-outlined text-sm">history</span>
                                 New tracking point
                             </div>
-</div>
-</div>
-</div>
-<!-- Recent Project Activity (Table/List) -->
-<div class="col-span-12 bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm overflow-hidden">
-<h3 class="text-xl font-headline font-bold mb-6">Recent Resource Activity</h3>
-<div class="overflow-x-auto">
-<table class="w-full text-left">
-<thead>
-<tr class="text-xs font-bold text-outline-variant uppercase tracking-wider">
-<th class="pb-4 px-2">Resource ID</th>
-<th class="pb-4 px-2">Type</th>
-<th class="pb-4 px-2">User</th>
-<th class="pb-4 px-2">Daily Cost</th>
-<th class="pb-4 px-2 text-right">Status</th>
-</tr>
-</thead>
-<tbody class="text-sm">
-<tr class="hover:bg-surface-container-high transition-colors group">
-<td class="py-4 px-2 font-mono font-medium">db-aurora-latam-01</td>
-<td class="py-4 px-2"><span class="bg-surface-container-low px-2 py-1 rounded text-xs font-bold">Database</span></td>
-<td class="py-4 px-2">M. Rodriguez</td>
-<td class="py-4 px-2 font-bold">$142.10</td>
-<td class="py-4 px-2 text-right">
-<span class="inline-block w-2 h-2 rounded-full bg-secondary mr-2"></span>
-<span class="font-bold text-secondary">Healthy</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-high transition-colors group">
-<td class="py-4 px-2 font-mono font-medium">k8s-cluster-prod-a</td>
-<td class="py-4 px-2"><span class="bg-surface-container-low px-2 py-1 rounded text-xs font-bold">Compute</span></td>
-<td class="py-4 px-2">System Auth</td>
-<td class="py-4 px-2 font-bold">$1,240.55</td>
-<td class="py-4 px-2 text-right">
-<span class="inline-block w-2 h-2 rounded-full bg-secondary mr-2"></span>
-<span class="font-bold text-secondary">Healthy</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-high transition-colors group">
-<td class="py-4 px-2 font-mono font-medium">storage-s3-glacier-v2</td>
-<td class="py-4 px-2"><span class="bg-surface-container-low px-2 py-1 rounded text-xs font-bold">Storage</span></td>
-<td class="py-4 px-2">D. Thompson</td>
-<td class="py-4 px-2 font-bold">$22.01</td>
-<td class="py-4 px-2 text-right">
-<span class="inline-block w-2 h-2 rounded-full bg-tertiary mr-2"></span>
-<span class="font-bold text-tertiary">Warning</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-</main>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Sidebar Active States
-        const sidebarLinks = document.querySelectorAll('aside nav a');
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (link.getAttribute('href') === '#') e.preventDefault();
-                sidebarLinks.forEach(l => {
-                    l.classList.remove('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm', 'rounded-xl');
-                    l.classList.add('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
-                    const icon = l.querySelector('.material-symbols-outlined');
-                    if (icon) icon.style.fontVariationSettings = "'FILL' 0";
-                });
-                link.classList.remove('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
-                link.classList.add('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm', 'rounded-xl');
-                const icon = link.querySelector('.material-symbols-outlined');
-                if (icon) icon.style.fontVariationSettings = "'FILL' 1";
-            });
-        });
-
-        // Generic Buttons
-        document.querySelectorAll('button').forEach(btn => {
-            const text = btn.textContent.trim();
-            if (text.includes('New Project')) {
-                btn.addEventListener('click', () => alert('Initiating new project creation sequence...'));
-            } else if (text.includes('Manage Project')) {
-                btn.addEventListener('click', () => alert('Opening Sky-Alpha project settings...'));
-            } else if (text.includes('Generate PDF Report')) {
-                btn.addEventListener('click', () => window.print());
-            } else if (text === 'Monthly' || text === 'Quarterly') {
-                btn.addEventListener('click', (e) => {
-                    const siblings = e.target.parentElement.querySelectorAll('button');
-                    siblings.forEach(b => {
-                        b.className = 'px-3 py-1 text-xs font-bold text-outline hover:bg-surface-container-highest rounded-md transition-colors';
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Project Activity (Table/List) -->
+                <div class="col-span-12 bg-surface-container-lowest rounded-[2rem] p-8 shadow-sm overflow-hidden">
+                    <h3 class="text-xl font-headline font-bold mb-6">Recent Resource Activity</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="text-xs font-bold text-outline-variant uppercase tracking-wider">
+                                    <th class="pb-4 px-2">Resource ID</th>
+                                    <th class="pb-4 px-2">Type</th>
+                                    <th class="pb-4 px-2">User</th>
+                                    <th class="pb-4 px-2">Daily Cost</th>
+                                    <th class="pb-4 px-2 text-right">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="hover:bg-surface-container-high transition-colors group">
+                                    <td class="py-4 px-2 font-mono font-medium">db-aurora-latam-01</td>
+                                    <td class="py-4 px-2"><span
+                                            class="bg-surface-container-low px-2 py-1 rounded text-xs font-bold">Database</span>
+                                    </td>
+                                    <td class="py-4 px-2">M. Rodriguez</td>
+                                    <td class="py-4 px-2 font-bold">$142.10</td>
+                                    <td class="py-4 px-2 text-right">
+                                        <span class="inline-block w-2 h-2 rounded-full bg-secondary mr-2"></span>
+                                        <span class="font-bold text-secondary">Healthy</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container-high transition-colors group">
+                                    <td class="py-4 px-2 font-mono font-medium">k8s-cluster-prod-a</td>
+                                    <td class="py-4 px-2"><span
+                                            class="bg-surface-container-low px-2 py-1 rounded text-xs font-bold">Compute</span>
+                                    </td>
+                                    <td class="py-4 px-2">System Auth</td>
+                                    <td class="py-4 px-2 font-bold">$1,240.55</td>
+                                    <td class="py-4 px-2 text-right">
+                                        <span class="inline-block w-2 h-2 rounded-full bg-secondary mr-2"></span>
+                                        <span class="font-bold text-secondary">Healthy</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container-high transition-colors group">
+                                    <td class="py-4 px-2 font-mono font-medium">storage-s3-glacier-v2</td>
+                                    <td class="py-4 px-2"><span
+                                            class="bg-surface-container-low px-2 py-1 rounded text-xs font-bold">Storage</span>
+                                    </td>
+                                    <td class="py-4 px-2">D. Thompson</td>
+                                    <td class="py-4 px-2 font-bold">$22.01</td>
+                                    <td class="py-4 px-2 text-right">
+                                        <span class="inline-block w-2 h-2 rounded-full bg-tertiary mr-2"></span>
+                                        <span class="font-bold text-tertiary">Warning</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Sidebar Active States
+            const sidebarLinks = document.querySelectorAll('aside nav a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    if (link.getAttribute('href') === '#') e.preventDefault();
+                    sidebarLinks.forEach(l => {
+                        l.classList.remove('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm', 'rounded-xl');
+                        l.classList.add('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
+                        const icon = l.querySelector('.material-symbols-outlined');
+                        if (icon) icon.style.fontVariationSettings = "'FILL' 0";
                     });
-                    e.target.className = 'px-3 py-1 text-xs font-bold bg-white shadow-sm rounded-md text-primary transition-colors';
+                    link.classList.remove('text-slate-600', 'dark:text-slate-400', 'hover:text-[#1A73E8]', 'hover:bg-white/50', 'dark:hover:bg-slate-800/50');
+                    link.classList.add('bg-white', 'dark:bg-slate-900', 'text-[#1A73E8]', 'shadow-sm', 'rounded-xl');
+                    const icon = link.querySelector('.material-symbols-outlined');
+                    if (icon) icon.style.fontVariationSettings = "'FILL' 1";
                 });
-            } else {
-                const icon = btn.querySelector('.material-symbols-outlined');
-                if (icon) {
-                    const iconText = icon.textContent.trim();
-                    if (iconText === 'language') {
-                        btn.addEventListener('click', () => alert('Language preferences'));
-                    } else if (iconText === 'notifications') {
-                        btn.addEventListener('click', () => {
-                            const badge = btn.querySelector('.bg-error');
-                            if (badge) badge.remove(); 
-                            alert('You have 1 new critical alert.');
+            });
+
+            // Generic Buttons
+            document.querySelectorAll('button').forEach(btn => {
+                const text = btn.textContent.trim();
+                if (text.includes('New Project')) {
+                    btn.addEventListener('click', () => alert('Initiating new project creation sequence...'));
+                } else if (text.includes('Manage Project')) {
+                    btn.addEventListener('click', () => alert('Opening Sky-Alpha project settings...'));
+                } else if (text.includes('Generate PDF Report')) {
+                    btn.addEventListener('click', () => window.print());
+                } else if (text === 'Monthly' || text === 'Quarterly') {
+                    btn.addEventListener('click', (e) => {
+                        const siblings = e.target.parentElement.querySelectorAll('button');
+                        siblings.forEach(b => {
+                            b.className = 'px-3 py-1 text-xs font-bold text-outline hover:bg-surface-container-highest rounded-md transition-colors';
                         });
-                    } else if (iconText === 'filter_list') {
-                        btn.addEventListener('click', () => alert('Opening label attribution filters...'));
+                        e.target.className = 'px-3 py-1 text-xs font-bold bg-white shadow-sm rounded-md text-primary transition-colors';
+                    });
+                } else {
+                    const icon = btn.querySelector('.material-symbols-outlined');
+                    if (icon) {
+                        const iconText = icon.textContent.trim();
+                        if (iconText === 'language') {
+                            btn.addEventListener('click', () => alert('Language preferences'));
+                        } else if (iconText === 'notifications') {
+                            btn.addEventListener('click', () => {
+                                const badge = btn.querySelector('.bg-error');
+                                if (badge) badge.remove();
+                                alert('You have 1 new critical alert.');
+                            });
+                        } else if (iconText === 'filter_list') {
+                            btn.addEventListener('click', () => alert('Opening label attribution filters...'));
+                        }
                     }
                 }
-            }
-        });
+            });
 
-        // Other Nav links
-        document.querySelectorAll('a').forEach(link => {
-            const text = link.textContent.trim();
-            if (['Docs', 'Support', 'Settings', 'Help'].includes(text)) {
-                if(link.getAttribute('href') === '#') {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        alert(`Navigating to ${text} page...`);
-                    });
-                }
-            }
-        });
-        
-        // Search
-        const searchInput = document.querySelector('input[placeholder*="Search"]');
-        if(searchInput) {
-            searchInput.addEventListener('keydown', (e) => {
-                if(e.key === 'Enter') {
-                    alert('Searching for: ' + e.target.value);
+            // Other Nav links
+            document.querySelectorAll('a').forEach(link => {
+                const text = link.textContent.trim();
+                if (['Docs', 'Support', 'Settings', 'Help'].includes(text)) {
+                    if (link.getAttribute('href') === '#') {
+                        link.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            alert(`Navigating to ${text} page...`);
+                        });
+                    }
                 }
             });
-        }
-    });
-</script>
-</body></html>
+
+            // Search
+            const searchInput = document.querySelector('input[placeholder*="Search"]');
+            if (searchInput) {
+                searchInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        alert('Searching for: ' + e.target.value);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
