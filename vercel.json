@@ -1,8 +1,9 @@
 {
   "version": 2,
+  "outputDirectory": "public",
   "rewrites": [
-    { "source": "/api/run-alert-check", "destination": "/api/run-alert-check" },
-    { "source": "/api/check-alertas",   "destination": "/api/check-alertas" },
+    { "source": "/api/run-alert-check",    "destination": "/api/run-alert-check" },
+    { "source": "/api/check-alertas",      "destination": "/api/check-alertas" },
     { "source": "/api/resumen-financiero", "destination": "/api/resumen-financiero" },
     { "source": "/api/detalle-operativo",  "destination": "/api/detalle-operativo" },
     { "source": "/api/health",             "destination": "/api/health" }
