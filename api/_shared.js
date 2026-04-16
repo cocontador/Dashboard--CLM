@@ -17,8 +17,8 @@ const MOCK_DB = {
     {
       id:                   'svc_001',
       nombre_servicio:      'Compute Engine',
-      proyecto_asociado:    'WALO-App',
-      etiquetas:            ['ambiente:produccion', 'cliente:walo'],
+      proyecto_asociado:    'Infra-Produccion',
+      etiquetas:            ['ambiente:produccion', 'equipo:infraestructura'],
       costo_usd:            1850.50,
       responsable:          'Equipo Backend',
       presupuesto_asignado: 2000.00
@@ -26,8 +26,8 @@ const MOCK_DB = {
     {
       id:                   'svc_002',
       nombre_servicio:      'Cloud SQL',
-      proyecto_asociado:    'WALO-App',
-      etiquetas:            ['ambiente:produccion', 'cliente:walo'],
+      proyecto_asociado:    'Infra-Produccion',
+      etiquetas:            ['ambiente:produccion', 'equipo:datos'],
       costo_usd:            950.20,
       responsable:          'Equipo Datos',
       presupuesto_asignado: 1000.00
@@ -35,10 +35,10 @@ const MOCK_DB = {
     {
       id:                   'svc_003',
       nombre_servicio:      'Cloud Storage',
-      proyecto_asociado:    'Data-Lake-Interno',
+      proyecto_asociado:    'Analytics-Central',
       etiquetas:            ['ambiente:desarrollo', 'departamento:analitica'],
       costo_usd:            420.10,
-      responsable:          'Practicantes',
+      responsable:          'Equipo Analytics',
       presupuesto_asignado: 500.00
     },
     {
@@ -47,8 +47,26 @@ const MOCK_DB = {
       proyecto_asociado:    'Cloud-Dashboard',
       etiquetas:            ['ambiente:pruebas', 'proyecto:dashboard'],
       costo_usd:            15.00,
-      responsable:          'Practicantes',
+      responsable:          'Equipo CloudLatam',
       presupuesto_asignado: 50.00
+    },
+    {
+      id:                   'svc_005',
+      nombre_servicio:      'Cloud Run',
+      proyecto_asociado:    'Microservicios-Core',
+      etiquetas:            ['ambiente:produccion', 'equipo:plataforma'],
+      costo_usd:            780.30,
+      responsable:          'Equipo Plataforma',
+      presupuesto_asignado: 900.00
+    },
+    {
+      id:                   'svc_006',
+      nombre_servicio:      'Pub/Sub',
+      proyecto_asociado:    'Microservicios-Core',
+      etiquetas:            ['ambiente:produccion', 'equipo:plataforma'],
+      costo_usd:            234.65,
+      responsable:          'Equipo Plataforma',
+      presupuesto_asignado: 300.00
     }
   ],
 
@@ -57,7 +75,7 @@ const MOCK_DB = {
       id:        'alrt_101',
       tipo:      'PRESUPUESTO_EXCEDIDO',
       severidad: 'ALTA',
-      mensaje:   'El proyecto WALO-App superó el 80% de su presupuesto mensual.',
+      mensaje:   'El proyecto Infra-Produccion superó el 80% de su presupuesto mensual.',
       fecha:     '2026-04-15T14:20:00Z',
       estado:    'no_leida'
     },
@@ -65,7 +83,7 @@ const MOCK_DB = {
       id:        'alrt_102',
       tipo:      'ANOMALIA_DETECTADA',
       severidad: 'MEDIA',
-      mensaje:   'Pico de consumo inusual (+25%) detectado en Compute Engine (WALO-App) en las últimas 24h.',
+      mensaje:   'Pico de consumo inusual (+25%) detectado en Compute Engine (Infra-Produccion) en las últimas 24h.',
       fecha:     '2026-04-14T09:15:00Z',
       estado:    'leida'
     }
