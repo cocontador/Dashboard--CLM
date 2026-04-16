@@ -1,12 +1,12 @@
 {
   "name": "cloudlatam-backend-orchestration",
   "version": "1.0.0",
-  "description": "CloudLatam FinOps & GreenOps Backend Orchestration Mock",
-  "main": "mock_server.js",
+  "description": "CloudLatam FinOps & GreenOps Backend Orchestration - Vercel Serverless",
   "scripts": {
-    "start":   "node mock_server.js",
-    "test":    "node run_tests.js",
-    "dev":     "node mock_server.js"
+    "dev":        "vercel dev",
+    "start":      "node mock_server.js",
+    "test":       "node run_tests.js",
+    "deploy":     "vercel --prod"
   },
   "engines": {
     "node": ">=18.0.0"
