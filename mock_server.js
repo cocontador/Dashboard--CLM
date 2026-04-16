@@ -13,7 +13,7 @@
  */
 
 const http = require('http');
-const url  = require('url');
+const url = require('url');
 
 const PORT = 3001;
 
@@ -24,68 +24,68 @@ const PORT = 3001;
 const MOCK_DB = {
   BillingData: {
     fecha_actualizacion: "2026-04-15T18:30:00Z",
-    gasto_mes_actual:    4250.75,
-    presupuesto_total:   5000.00,
-    porcentaje_uso:      85.01,
-    huella_carbono_kg:   125.4,
-    tendencia_gasto_7d:  [380, 410, 395, 450, 480, 520, 610]
+    gasto_mes_actual: 4250.75,
+    presupuesto_total: 5000.00,
+    porcentaje_uso: 85.01,
+    huella_carbono_kg: 125.4,
+    tendencia_gasto_7d: [380, 410, 395, 450, 480, 520, 610]
   },
 
   ServiceData: [
     {
-      id:                  "svc_001",
-      nombre_servicio:     "Compute Engine",
-      proyecto_asociado:   "WALO-App",
-      etiquetas:           ["ambiente:produccion", "cliente:walo"],
-      costo_usd:           1850.50,
-      responsable:         "Equipo Backend",
+      id: "svc_001",
+      nombre_servicio: "Compute Engine",
+      proyecto_asociado: "WALO-App",
+      etiquetas: ["ambiente:produccion", "cliente:walo"],
+      costo_usd: 1850.50,
+      responsable: "Equipo Backend",
       presupuesto_asignado: 2000.00
     },
     {
-      id:                  "svc_002",
-      nombre_servicio:     "Cloud SQL",
-      proyecto_asociado:   "WALO-App",
-      etiquetas:           ["ambiente:produccion", "cliente:walo"],
-      costo_usd:           950.20,
-      responsable:         "Equipo Datos",
+      id: "svc_002",
+      nombre_servicio: "Cloud SQL",
+      proyecto_asociado: "WALO-App",
+      etiquetas: ["ambiente:produccion", "cliente:walo"],
+      costo_usd: 950.20,
+      responsable: "Equipo Datos",
       presupuesto_asignado: 1000.00
     },
     {
-      id:                  "svc_003",
-      nombre_servicio:     "Cloud Storage",
-      proyecto_asociado:   "Data-Lake-Interno",
-      etiquetas:           ["ambiente:desarrollo", "departamento:analitica"],
-      costo_usd:           420.10,
-      responsable:         "Practicantes",
+      id: "svc_003",
+      nombre_servicio: "Cloud Storage",
+      proyecto_asociado: "Data-Lake-Interno",
+      etiquetas: ["ambiente:desarrollo", "departamento:analitica"],
+      costo_usd: 420.10,
+      responsable: "Practicantes",
       presupuesto_asignado: 500.00
     },
     {
-      id:                  "svc_004",
-      nombre_servicio:     "BigQuery",
-      proyecto_asociado:   "Cloud-Dashboard",
-      etiquetas:           ["ambiente:pruebas", "proyecto:dashboard"],
-      costo_usd:           15.00,
-      responsable:         "Practicantes",
+      id: "svc_004",
+      nombre_servicio: "BigQuery",
+      proyecto_asociado: "Cloud-Dashboard",
+      etiquetas: ["ambiente:pruebas", "proyecto:dashboard"],
+      costo_usd: 15.00,
+      responsable: "Practicantes",
       presupuesto_asignado: 50.00
     }
   ],
 
   AlertsData: [
     {
-      id:        "alrt_101",
-      tipo:      "PRESUPUESTO_EXCEDIDO",
+      id: "alrt_101",
+      tipo: "PRESUPUESTO_EXCEDIDO",
       severidad: "ALTA",
-      mensaje:   "El proyecto WALO-App superó el 80% de su presupuesto mensual.",
-      fecha:     "2026-04-15T14:20:00Z",
-      estado:    "no_leida"
+      mensaje: "El proyecto WALO-App superó el 80% de su presupuesto mensual.",
+      fecha: "2026-04-15T14:20:00Z",
+      estado: "no_leida"
     },
     {
-      id:        "alrt_102",
-      tipo:      "ANOMALIA_DETECTADA",
+      id: "alrt_102",
+      tipo: "ANOMALIA_DETECTADA",
       severidad: "MEDIA",
-      mensaje:   "Pico de consumo inusual (+25%) detectado en Compute Engine (WALO-App) en las últimas 24h.",
-      fecha:     "2026-04-14T09:15:00Z",
-      estado:    "leida"
+      mensaje: "Pico de consumo inusual (+25%) detectado en Compute Engine (WALO-App) en las últimas 24h.",
+      fecha: "2026-04-14T09:15:00Z",
+      estado: "leida"
     }
   ]
 };
@@ -110,7 +110,7 @@ function safeParam(str) {
 
 function jsonResponse(res, statusCode, data) {
   res.writeHead(statusCode, {
-    'Content-Type':                'application/json',
+    'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',   // CORS for Stitch
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type'
@@ -148,29 +148,29 @@ function simulateChatMessage(alerts) {
 function handleResumenFinanciero(res) {
   const { BillingData } = MOCK_DB;
 
-  const porcentaje_uso  = calcBudgetPct(BillingData.gasto_mes_actual, BillingData.presupuesto_total);
-  const restante_usd    = BillingData.presupuesto_total - BillingData.gasto_mes_actual;
+  const porcentaje_uso = calcBudgetPct(BillingData.gasto_mes_actual, BillingData.presupuesto_total);
+  const restante_usd = BillingData.presupuesto_total - BillingData.gasto_mes_actual;
   const en_zona_critica = porcentaje_uso >= 80;
 
   const payload = {
-    flujo:               "FLUJO_1_RESUMEN_FINANCIERO",
-    timestamp:           new Date().toISOString(),
+    flujo: "FLUJO_1_RESUMEN_FINANCIERO",
+    timestamp: new Date().toISOString(),
     data: {
       gasto_mes_actual_raw: BillingData.gasto_mes_actual,
       gasto_mes_actual_fmt: formatUSD(BillingData.gasto_mes_actual),
       presupuesto_total_raw: BillingData.presupuesto_total,
       presupuesto_total_fmt: formatUSD(BillingData.presupuesto_total),
       porcentaje_uso,
-      restante_usd_raw:  restante_usd,
-      restante_usd_fmt:  formatUSD(restante_usd),
+      restante_usd_raw: restante_usd,
+      restante_usd_fmt: formatUSD(restante_usd),
       huella_carbono_kg: BillingData.huella_carbono_kg,
       tendencia_gasto_7d: BillingData.tendencia_gasto_7d,
       en_zona_critica,
       estado_presupuesto: en_zona_critica ? "CRÍTICO" : "NORMAL"
     },
     meta: {
-      fuente:          "BigQuery MCP (mock)",
-      ultima_sync:     BillingData.fecha_actualizacion,
+      fuente: "BigQuery MCP (mock)",
+      ultima_sync: BillingData.fecha_actualizacion,
       sql_equivalente: "SELECT SUM(costo_usd), MAX(presupuesto_total), SUM(huella_carbono_kg) FROM billing.resumen_mensual WHERE MONTH = CURRENT_MONTH"
     }
   };
@@ -202,17 +202,17 @@ function handleCheckAlertas(res) {
     .filter(svc => svc.pct_uso >= UMBRAL * 100);
 
   const nuevasAlertas = overdraft.map((svc, i) => ({
-    id:        `alrt_auto_${Date.now()}_${i}`,
-    tipo:      "PRESUPUESTO_EXCEDIDO",
+    id: `alrt_auto_${Date.now()}_${i}`,
+    tipo: "PRESUPUESTO_EXCEDIDO",
     severidad: svc.pct_uso >= 100 ? "ALTA" : "MEDIA",
-    proyecto:  svc.proyecto_asociado,
-    servicio:  svc.nombre_servicio,
-    pct_uso:   svc.pct_uso,
+    proyecto: svc.proyecto_asociado,
+    servicio: svc.nombre_servicio,
+    pct_uso: svc.pct_uso,
     costo_fmt: formatUSD(svc.costo_usd),
     presupuesto_fmt: formatUSD(svc.presupuesto_asignado),
-    mensaje:   `${svc.nombre_servicio} (${svc.proyecto_asociado}) usó ${svc.pct_uso}% del presupuesto.`,
-    fecha:     new Date().toISOString(),
-    estado:    "no_leida"
+    mensaje: `${svc.nombre_servicio} (${svc.proyecto_asociado}) usó ${svc.pct_uso}% del presupuesto.`,
+    fecha: new Date().toISOString(),
+    estado: "no_leida"
   }));
 
   // Side effects: Workspace notifications
@@ -222,20 +222,20 @@ function handleCheckAlertas(res) {
   }
 
   const payload = {
-    flujo:             "FLUJO_2_ALERTAS_PROACTIVAS",
-    timestamp:         new Date().toISOString(),
-    trigger:           "CRON_OR_MANUAL",
+    flujo: "FLUJO_2_ALERTAS_PROACTIVAS",
+    timestamp: new Date().toISOString(),
+    trigger: "CRON_OR_MANUAL",
     alertas_generadas: nuevasAlertas.length,
     workspace_notified: nuevasAlertas.length > 0,
-    alertas:           nuevasAlertas,
-    historico:         MOCK_DB.AlertsData,
+    alertas: nuevasAlertas,
+    historico: MOCK_DB.AlertsData,
     meta: {
-      umbral_pct:      UMBRAL * 100,
-      fuente:          "BigQuery MCP (mock)",
+      umbral_pct: UMBRAL * 100,
+      fuente: "BigQuery MCP (mock)",
       sql_equivalente: "SELECT * FROM billing.service_costs WHERE (costo_usd / presupuesto_asignado) > 0.80",
       workspace: {
-        gmail_destino:         "admins@cloudlatam.com",
-        chat_webhook_destino:  "https://chat.googleapis.com/v1/spaces/XXXX/messages"
+        gmail_destino: "admins@cloudlatam.com",
+        chat_webhook_destino: "https://chat.googleapis.com/v1/spaces/XXXX/messages"
       }
     }
   };
@@ -257,11 +257,11 @@ function handleCheckAlertas(res) {
  *   LIMIT @limit OFFSET @offset
  */
 function handleDetalleOperativo(res, queryParams) {
-  const proyecto  = queryParams.proyecto  ? safeParam(queryParams.proyecto)  : null;
-  const servicio  = queryParams.servicio  ? safeParam(queryParams.servicio)  : null;
-  const etiqueta  = queryParams.etiqueta  ? safeParam(queryParams.etiqueta)  : null;
-  const page      = Math.max(1, parseInt(queryParams.page  || '1', 10));
-  const pageSize  = Math.min(50, parseInt(queryParams.size || '10', 10));
+  const proyecto = queryParams.proyecto ? safeParam(queryParams.proyecto) : null;
+  const servicio = queryParams.servicio ? safeParam(queryParams.servicio) : null;
+  const etiqueta = queryParams.etiqueta ? safeParam(queryParams.etiqueta) : null;
+  const page = Math.max(1, parseInt(queryParams.page || '1', 10));
+  const pageSize = Math.min(50, parseInt(queryParams.size || '10', 10));
 
   let results = [...MOCK_DB.ServiceData];
 
@@ -277,22 +277,22 @@ function handleDetalleOperativo(res, queryParams) {
   );
 
   // Pagination
-  const total      = results.length;
+  const total = results.length;
   const totalPages = Math.ceil(total / pageSize);
-  const offset     = (page - 1) * pageSize;
-  const paginated  = results.slice(offset, offset + pageSize);
+  const offset = (page - 1) * pageSize;
+  const paginated = results.slice(offset, offset + pageSize);
 
   const payload = {
-    flujo:    "FLUJO_3_DETALLE_OPERATIVO",
+    flujo: "FLUJO_3_DETALLE_OPERATIVO",
     timestamp: new Date().toISOString(),
     filtros_aplicados: { proyecto, servicio, etiqueta },
     paginacion: {
       pagina_actual: page,
-      page_size:     pageSize,
-      total_items:   total,
+      page_size: pageSize,
+      total_items: total,
       total_paginas: totalPages,
       hay_siguiente: page < totalPages,
-      hay_anterior:  page > 1
+      hay_anterior: page > 1
     },
     resultados: paginated.map(s => ({
       ...s,
@@ -300,9 +300,9 @@ function handleDetalleOperativo(res, queryParams) {
       pct_presupuesto: calcBudgetPct(s.costo_usd, s.presupuesto_asignado)
     })),
     meta: {
-      fuente:          "BigQuery MCP (mock)",
+      fuente: "BigQuery MCP (mock)",
       sql_equivalente: `SELECT * FROM billing.service_costs WHERE proyecto_asociado=@proyecto AND nombre_servicio=@servicio LIMIT ${pageSize} OFFSET ${offset}`,
-      seguridad:       "Todos los parámetros sanitizados. Sin concatenación directa a SQL."
+      seguridad: "Todos los parámetros sanitizados. Sin concatenación directa a SQL."
     }
   };
 
@@ -314,15 +314,15 @@ function handleDetalleOperativo(res, queryParams) {
 // HTTP ROUTER
 // ─────────────────────────────────────────────
 const server = http.createServer((req, res) => {
-  const parsed  = url.parse(req.url, true);
-  const path    = parsed.pathname;
-  const params  = parsed.query;
-  const method  = req.method;
+  const parsed = url.parse(req.url, true);
+  const path = parsed.pathname;
+  const params = parsed.query;
+  const method = req.method;
 
   // CORS preflight
   if (method === 'OPTIONS') {
     res.writeHead(204, {
-      'Access-Control-Allow-Origin':  '*',
+      'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type'
     });
@@ -336,7 +336,7 @@ const server = http.createServer((req, res) => {
   }
 
   if ((path === '/api/check-alertas' || path === '/api/run-alert-check')
-      && (method === 'GET' || method === 'POST')) {
+    && (method === 'GET' || method === 'POST')) {
     return handleCheckAlertas(res);
   }
 
